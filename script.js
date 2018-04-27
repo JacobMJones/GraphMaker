@@ -15,11 +15,8 @@ function drawBarChart(data, options, element){
 
 function addBar(){
 	
-	 var variableName = document.getElementById("variable-name").value;
-	 var variableValue = document.getElementById("variable-value").value;
-	
-
-
+	var variableName = document.getElementById("variable-name").value;
+	var variableValue = document.getElementById("variable-value").value;
 	bar.name = variableName;
 	bar.value = variableValue;
 	barArray.push(bar);
