@@ -10,7 +10,7 @@ var barArray = [];
 
 function drawBarChart(data, options, element){
 	
-	
+	//for (var i = 0; )
 }
 
 function addBar(){
@@ -18,14 +18,14 @@ function addBar(){
 	 var variableName = document.getElementById("variable-name").value;
 	 var variableValue = document.getElementById("variable-value").value;
 	
-	bar.height = 50;
-	bar.width = 25;
-	bar.color = '#ee1';
+
+
 	bar.name = variableName;
 	bar.value = variableValue;
 	barArray.push(bar);
 	
-	console.log(variableName + '' + variableValue);
+	
+	console.log(barArray);
 }
 
 $(document).ready(function () {
