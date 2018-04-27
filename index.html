@@ -13,8 +13,12 @@
 
 	<div id="user-interface">
 		<div id="variables-values">
-			Variable: <input type="text" name="variables-input" value=""> Value: <input type="text" name="data-input" value="">
-			<button type="button" onClick="addBar">Add to chart</button>
+			Variable: <input type="text" id="variable-name"> 
+			Value: <input type="text" id="variable-value">
+			<button type="button" onclick="addBar()">Add to chart</button>
+			<div id='display-of-variables'>
+			<p></p>
+			</div>
 		</div>
 
 		<div id ="option">
