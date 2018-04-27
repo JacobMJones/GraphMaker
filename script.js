@@ -1,6 +1,8 @@
 $(document).ready(function () {
-	
-
-	console.log('works');
 
 });
+
+
+function drawBarChart(data, options, element){
+	
+}
