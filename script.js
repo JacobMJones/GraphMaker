@@ -75,5 +75,7 @@ $(document).ready(function () {
 	barArray.push(bar2);
 		barArray.push(bar3);
 	barArray.push(bar4);
-	drawBarChart(barArray);
+	
+	
+	drawBarChart(barArray,'',"#bar-graph");
 });
