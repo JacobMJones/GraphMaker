@@ -20,14 +20,16 @@
 	position: absolute;
 	width:50;
 	display: inline-block;
-	float: left;
+	
 	bottom: 0;
 	text-align: right;
 }
 
 .barValue{
 	
-	display: inline-block;
-	bottom: 75;
-	text-align: right;
+	position: absolute;
+	display: inline-block;		
+	text-align: center;
 }
+
+
