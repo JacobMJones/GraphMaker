@@ -13,29 +13,29 @@ function drawBarChart(data, options, element) {
 
 	//first pass is the bar graph
 	for (var i = 0; i < data.length; i++) {
-		var divName = "barDiv" + i;	
+		var divName = "barDiv" + i;
 		var variableName = data[i].name;
 		var variableValue = data[i].value;
-		var height = variableValue;	
-		var width = (90/data.length) -(5/data.length) + "%";
-		var distance = (100/data.length)* i +"%";
+		var height = variableValue;
+		var width = (90 / data.length) - (5 / data.length) + "%";
+		var distance = (100 / data.length) * i + "%";
 		var col = randomColor();
 
-		myHtml += "<div class='bar' style=" + "background-color:" + col + ";" + "height:" + height + ";" + "width:" + width + ";" +  "margin-left:" + distance + ";" + ">" + variableValue + "</div>";
+		myHtml += "<div class='bar' style=" + "background-color:" + col + ";" + "height:" + height + ";" + "width:" + width + ";" + "margin-left:" + distance + ";" + "text-align:" + "center" + ";" + ">" + variableValue + "</div>";
 	}
-	
+
 	//second pass is for variable name
 	for (var d = 0; d < data.length; d++) {
-		var divName = "barName" + d;	
+		var divName = "barName" + d;
 		var name = data[d].name;
-			
-		var distance = (100/data.length)* d +"%";
+
+		var distance = (100 / data.length) * d + "%";
 
 
 		myHtml += "<div class='barName' style=" + "height:" + 50 + ";" + "margin-left:" + distance + ";" + ">" + name + "</div>";
 	}
-	
-	
+
+
 	$(element).html(myHtml);
 }
 
@@ -76,9 +76,11 @@ $(document).ready(function () {
 	}
 	barArray.push(bar1);
 	barArray.push(bar2);
-		barArray.push(bar3);
+	barArray.push(bar3);
 	barArray.push(bar4);
-	
-	
-	drawBarChart(barArray,'',"#bar-graph");
+	barArray.push(bar4);
+	barArray.push(bar3);
+
+
+	drawBarChart(barArray, '', "#bar-graph");
 });

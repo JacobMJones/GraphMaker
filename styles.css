@@ -13,6 +13,7 @@
 	float: left;
 	bottom: 50;
 	
+	
 }
 
 .barName{
@@ -21,4 +22,5 @@
 	display: inline-block;
 	float: left;
 	bottom: 0;
+	text-align: right;
 }
