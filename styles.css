@@ -11,7 +11,14 @@
 	width:50;
 	display: inline-block;
 	float: left;
-	bottom: 0;
+	bottom: 50;
 	
 }
 
+.barName{
+	position: absolute;
+	width:50;
+	display: inline-block;
+	float: left;
+	bottom: 0;
+}
