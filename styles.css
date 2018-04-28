@@ -1,5 +1,13 @@
+.bar-graph{
+  position:absolute;
+  width:1000px;
+  height:1000px;
+  border:1px solid black;
+  padding:10px;
+}
+
+
 .bar{
-    width:200px;
-    height:100px;
-    background:blue;
+
+    float: left;
 }

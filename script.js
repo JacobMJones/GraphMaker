@@ -9,14 +9,24 @@ var barArray = [];
 
 function drawBarChart(data, options, element) {
 
+	var myHtml = "";
+ 
+style="color:blue;"
+	
+	var myHtml = "";
+	
 	for (var i = 0; i < data.length; i++) {
-		
+	
 		var divName = "barDiv" + i;
+		var distance = i * 10;
+		var col = randomColor();
+		myHtml += "<div class='bar' style=" + "margin-left:" + distance + ";" + "background-color:" + col  + ";" + "height:200px" + ">" + divName + "</div>";
 		
+		$( "#bar-graph" ).html(myHtml);
+		//$('#bar-graph').append("<div class='bar'>divName</div><br>").css({"background-color": col, "height": "200", "width": "100"}).text(divName);
 		
-		$('#bar-graph').append("<div class='divName'>divName</div>").css({"background-color": "yellow", "height": "200", "width": "100"}).text(divName);
-		
-		
+	//$('#bar-graph').append("<div class='bar'></div>").append("<p>dd</p>").css({"background-color": "col", "float": "left", "height": "200", "width": "50%"});
+
 		/*
 		
 		var div = document.createElement(divName);
@@ -28,7 +38,10 @@ function drawBarChart(data, options, element) {
 	}
 
 }
-
+function randomColor(){
+	var c = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+	return c;
+}
 function drawGraph() {
 	drawBarChart(barArray, "none", "bar-graph");
 }
@@ -40,9 +53,6 @@ function addBar() {
 	bar.name = variableName;
 	bar.value = variableValue;
 	barArray.push(bar);
-
-
-	console.log(barArray);
 }
 
 $(document).ready(function () {

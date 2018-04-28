@@ -5,3 +5,12 @@ https://stackoverflow.com/questions/20690408/how-to-draw-a-rectangle-in-html-or-
 How to Create and Style a Div
 https://stackoverflow.com/questions/6840326/how-can-i-create-and-style-a-div-using-javascript
 
+
+Add Text  and CSS to Div
+http://api.jquery.com/text/
+https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_css_set_multiple
+https://learn.jquery.com/performance/append-outside-loop/
+
+
+Stack Divs Horizontally
+http://jsfiddle.net/watson/Gsj27/3/
