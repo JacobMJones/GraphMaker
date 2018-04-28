@@ -22,12 +22,13 @@ function drawBarChart(data, options, element) {
 		var variableValue = data[i].value;
 
 		var height = variableValue;
+		var width = 50;
 		var distance = i * 25 + "%";
 		var col = randomColor();
 
 
 
-		myHtml += "<div class='bar' style=" + "background-color:" + col + ";" + "height:" + height + ";" + "margin-left:" + distance + ";" + "display:" + "inline-block" + ";" + "position:" + "absolute" + ";" + "bottom:" + "0" + ";" + "float:" + "left" + ";" + ">" + variableName + "</div>";
+		myHtml += "<div class='bar' style=" + "background-color:" + col + ";" + "height:" + height + ";" +  "margin-left:" + distance + ";" + ">" + variableName + "</div>";
 
 		//
 

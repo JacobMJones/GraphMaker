@@ -6,3 +6,13 @@
   padding:10px;
 }
 
+.bar{
+	position: absolute;
+	width:50;
+	display: inline-block;
+	float: left;
+	bottom: 0;
+	
+}
+
+	myHtml += "<div class='bar' style=" + "background-color:" + col + ";" + "height:" + height + ";" +  "margin-left:" + distance + ";" + ">" + variableName + "</div>";
