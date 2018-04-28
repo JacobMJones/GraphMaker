@@ -34,14 +34,16 @@ function drawBarChart(data, options, element) {
 		// section and bar
 		myHtml += "<div class='bar' style=" + "height:" + sections[s].sectionHeight + ";" + "background-color:" + sections[s].color + ";"  + "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
 		
+		
 		//Name
 		myHtml += "<div class='barName' style=" + "height:" + 50 + ";" + "margin-left:" + sections[s].distance + ";" + ">" + sections[s].variableName + "</div>";
 		
 		//Value
 		myHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].sectionHeight + 50) + ";" + "margin-left:" + sections[s].distance + ";"+">" + sections[s].variableValue  + "</div>";
 	}
-
+	myHtml += "<hr id='bottomLine'>";
 	$(element).html(myHtml);
+	
 }
 
 function randomColor() {
@@ -82,10 +84,10 @@ $(document).ready(function () {
 	barArray.push(bar1);
 	barArray.push(bar2);
 	barArray.push(bar3);
-	//barArray.push(bar4);
-	//barArray.push(bar4);
-	//barArray.push(bar3);
-	//barArray.push(bar2);
+	barArray.push(bar4);
+	barArray.push(bar4);
+	barArray.push(bar3);
+	barArray.push(bar2);
 
 
 	drawBarChart(barArray, '', "#bar-graph");

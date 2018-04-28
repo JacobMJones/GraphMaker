@@ -1,9 +1,9 @@
 #bar-graph{
   position: relative;
-  width:500px;
-  height:500px;
-  border:1px solid black;
-  padding:10px;
+  width:600px;
+  height:600px;
+  
+  padding:20px;
 }
 
 .bar{
@@ -32,4 +32,14 @@
 	text-align: center;
 }
 
+#bottomLine{
+	position: absolute;
+	bottom: 40;
+	width:650;
+	margin-left: -20;
+	
+}
+#verticalLine{
+	
+}
 
