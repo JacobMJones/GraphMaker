@@ -17,20 +17,20 @@ function drawBarChart(data, options, element) {
 		var variableName = data[i].name;
 		var variableValue = data[i].value;
 		var height = variableValue;	
+		var width = (90/data.length) -(5/data.length) + "%";
 		var distance = (100/data.length)* i +"%";
 		var col = randomColor();
 
-		myHtml += "<div class='bar' style=" + "background-color:" + col + ";" + "height:" + height + ";" +  "margin-left:" + distance + ";" + ">" + variableValue + "</div>";
+		myHtml += "<div class='bar' style=" + "background-color:" + col + ";" + "height:" + height + ";" + "width:" + width + ";" +  "margin-left:" + distance + ";" + ">" + variableValue + "</div>";
 	}
 	
 	//second pass is for variable name
 	for (var d = 0; d < data.length; d++) {
 		var divName = "barName" + d;	
 		var name = data[d].name;
-		
-		
+			
 		var distance = (100/data.length)* d +"%";
-		var col = randomColor();
+
 
 		myHtml += "<div class='barName' style=" + "height:" + 50 + ";" + "margin-left:" + distance + ";" + ">" + name + "</div>";
 	}
