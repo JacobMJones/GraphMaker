@@ -42,6 +42,7 @@ function drawBarChart(data, options, element) {
 		myHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].sectionHeight + 50) + ";" + "margin-left:" + sections[s].distance + ";"+">" + sections[s].variableValue  + "</div>";
 	}
 	myHtml += "<hr id='bottomLine'>";
+	myHtml += "<hr id='verticalLine'>" 
 	$(element).html(myHtml);
 	
 }

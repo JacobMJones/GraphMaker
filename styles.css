@@ -40,6 +40,13 @@
 	
 }
 #verticalLine{
-	
+	position:absolute;
+	 width: 0px; 
+      height: 100%;
+      float: left; 
+      border: 1px inset;
+	margin-left: -10;
+	bottom: 40;
+
 }
 
