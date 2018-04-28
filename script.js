@@ -14,27 +14,22 @@ var bar2;
 function drawBarChart(data, options, element) {
 	console.log(data[0].value)
 
+	var widthModifier;
+	
 	var myHtml = "";
-	var distance = 1;
+	var amountOfBars = data.length;
 	for (var i = 0; i < data.length; i++) {
 		var divName = "barDiv" + i;
 		var variableName = data[i].name;
 		var variableValue = data[i].value;
 
 		var height = variableValue;
-		var width = 50;
-		var distance = i * 25 + "%";
+		
+		var distance = (100/amountOfBars)* i +"%";
+		console.log(distance);
 		var col = randomColor();
 
-
-
 		myHtml += "<div class='bar' style=" + "background-color:" + col + ";" + "height:" + height + ";" +  "margin-left:" + distance + ";" + ">" + variableName + "</div>";
-
-		//
-
-		// position: absolute;
-		// bottom: 0;
-		// bottom: 0;
 
 	}
 	$("#bar-graph").html(myHtml);
