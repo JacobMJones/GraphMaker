@@ -12,6 +12,9 @@ var sections = [];
 function drawBarChart(data, options, element) {
 
 	var myHtml = "";
+	var elementWidth = $(element).width();	
+lineWidth = elementWidth + elementWidth/10;
+	
 	//setup sections and info
 	for (var i = 0; i < data.length; i++) {
 
@@ -40,8 +43,13 @@ function drawBarChart(data, options, element) {
 		
 		//Value
 		myHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].sectionHeight + 50) + ";" + "margin-left:" + sections[s].distance + ";"+">" + sections[s].variableValue  + "</div>";
+		
+		
 	}
-	myHtml += "<hr id='bottomLine'>";
+	
+	
+	myHtml += "<hr class='valueLine'>";
+	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";" +">";
 	myHtml += "<hr id='verticalLine'>" 
 	$(element).html(myHtml);
 	
@@ -86,9 +94,7 @@ $(document).ready(function () {
 	barArray.push(bar2);
 	barArray.push(bar3);
 	barArray.push(bar4);
-	barArray.push(bar4);
-	barArray.push(bar3);
-	barArray.push(bar2);
+
 
 
 	drawBarChart(barArray, '', "#bar-graph");
