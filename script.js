@@ -24,7 +24,7 @@ function drawBarChart(data, options, element) {
 			divName: "barDiv" + i,
 			variableName: data[i].name,
 			variableValue: data[i].value,
-			sectionHeight: data[i].value + 20,
+			sectionHeight: data[i].value + (elementHeight/4),
 			color: randomColor(),
 			barHeight: data[i].value,
 			sectionWidth: (90 / data.length) - (5 / data.length) + "%",
@@ -97,11 +97,11 @@ $(document).ready(function () {
 	}
 	var bar2 = {
 		name: 'dogs',
-		value: 250
+		value: 350
 	}
 	var bar3 = {
 		name: 'birds',
-		value: 50
+		value: 20
 	}
 	var bar4 = {
 		name: 'snakes',
