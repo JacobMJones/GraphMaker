@@ -12,9 +12,11 @@ var sections = [];
 function drawBarChart(data, options, element) {
 
 	var myHtml = "";
-	var elementWidth = $(element).width();	
-lineWidth = elementWidth + elementWidth/10;
-	
+	var elementWidth = $(element).width();
+	var lineWidth = elementWidth + elementWidth / 10;
+	var elementHeight = $(element).height();
+	elementHeight -= 30;
+
 	//setup sections and info
 	for (var i = 0; i < data.length; i++) {
 
@@ -31,28 +33,43 @@ lineWidth = elementWidth + elementWidth/10;
 		sections.push(section);
 	}
 
-	//append html to element
+
 	for (var s = 0; s < sections.length; s++) {
 
 		// section and bar
-		myHtml += "<div class='bar' style=" + "height:" + sections[s].sectionHeight + ";" + "background-color:" + sections[s].color + ";"  + "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
-		
-		
+		myHtml += "<div class='bar' style=" + "height:" + sections[s].sectionHeight + ";" + "background-color:" + sections[s].color + ";" + "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
+
+
 		//Name
 		myHtml += "<div class='barName' style=" + "height:" + 50 + ";" + "margin-left:" + sections[s].distance + ";" + ">" + sections[s].variableName + "</div>";
-		
+
 		//Value
-		myHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].sectionHeight + 50) + ";" + "margin-left:" + sections[s].distance + ";"+">" + sections[s].variableValue  + "</div>";
-		
-		
+		myHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].sectionHeight + 50) + ";" + "margin-left:" + sections[s].distance + ";" + ">" + sections[s].variableValue + "</div>";
+
+
 	}
+
+	//value lines 
+
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight / 4 + ";" + ">";
+
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight / 4 * 2 + ";" + ">";
+
+
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight / 4 * 3 + ";" + ">";
+
+
+
+	//border lines
+	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";" + ">";
 	
+	myHtml += "<hr id='topLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight + ";" + ">";
 	
-	myHtml += "<hr class='valueLine'>";
-	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";" +">";
-	myHtml += "<hr id='verticalLine'>" 
+	myHtml += "<hr id='verticalLine' style=" + "height:" + elementHeight + ";" + ">";
+
+	//append everything
 	$(element).html(myHtml);
-	
+
 }
 
 function randomColor() {
