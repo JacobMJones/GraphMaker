@@ -75,7 +75,7 @@ function drawBarChart(data, options, element) {
 
 		//Name
 		
-		labelsHtml += "<div class='barName' style=" + "bottom:" + 0 + ";" + "margin-left:" + ((labelDist * s) + (labelDist/data.length))  + ";" + ">" + sections[s].variableName + "</div>";
+		labelsHtml += "<div class='barName' style=" + "bottom:" + 0 + ";" + "bottom:" + graphLabelDivWidth/2 + ";" + "margin-left:" + ((labelDist * s) + (labelDist/data.length))  + ";" + ">" + sections[s].variableName + "</div>";
 
 		//Value (this is in graph Html as it appears in graph)
 		graphHtml += "<div class='barValue' style=" + "bottom:" + sections[s].sectionHeight + ";" + "margin-left:" + sections[s].distance + ";" + ">" + sections[s].variableValue + "</div>";
@@ -94,7 +94,7 @@ function drawBarChart(data, options, element) {
 	graphHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "margin-left:" + "bottom:" + midValLine + ";" + ">";
 
 
-	graphHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + ";" + "bottom:" + topValLine + ";" + ">";
+	graphHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + topValLine + ";" + ">";
 
 
 
