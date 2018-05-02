@@ -36,7 +36,9 @@
 
 	
 }
-
+#topLine{
+    position: absolute;
+}
 .valueLine{
 	position: absolute;
 }

@@ -70,7 +70,7 @@ var midValLine = ((elementHeight - lineBottomModifier)/2) + lineBottomModifier;
 	//border lines
 	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";" + "bottom:" + lineBottomModifier + ";" + ">";
 	
-	//myHtml += "<hr id='topLine' style=" + "width:" + lineWidth + ";" + "bottom:" + (54) +  ";" + ">";
+	myHtml += "<hr id='topLine' style=" + "width:" + lineWidth + ";" + "bottom:" + (topValLine + (midValLine-bottomValLine)) + ";" + ">";
 	
 	myHtml += "<hr id='verticalLine' style=" + "bottom:" + lineBottomModifier + ";" + "height:" + (elementHeight - lineBottomModifier) + ";" + ">";
 
