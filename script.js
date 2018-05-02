@@ -19,7 +19,7 @@ function drawBarChart(data, options, element) {
 	var elementWidth = $(element).width();
 	var lineWidth = elementWidth + elementWidth / 10;
 	var elementHeight = $(element).height();
-	elementHeight -= 30;
+	//elementHeight -= 30;
 
 	//setup sections and info
 	for (var i = 0; i < data.length; i++) {
@@ -43,37 +43,36 @@ function drawBarChart(data, options, element) {
 		// section and bar
 		myHtml += "<div class='bar' style=" + "height:" + sections[s].sectionHeight + ";" + "background-color:" + sections[s].color + ";" + "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
 
-
 		//Name
 		myHtml += "<div class='barName' style=" + "height:" + 50 + ";" + "margin-left:" + sections[s].distance + ";" + ">" + sections[s].variableName + "</div>";
 
 		//Value
 		myHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].sectionHeight + 50) + ";" + "margin-left:" + sections[s].distance + ";" + ">" + sections[s].variableValue + "</div>";
-
-
+        
 	}
 
 	//value lines 
-
-	var valueLineBottomModified = (elementHeight/5) + lineBottomModifier;
+var midValLine = ((elementHeight - lineBottomModifier)/2) + lineBottomModifier;
 	
-	console.log("1st " + valueLineBottomModified  + "2nd " + valueLineBottomModified * 2 + "3rd " + valueLineBottomModified * 3);
+	var bottomValLine = ((elementHeight - lineBottomModifier)/4) + lineBottomModifier;
+	//console.log("1st " + valueLineBottomModified  + "2nd " + valueLineBottomModified * 2 + "3rd " + valueLineBottomModified * 3);
 	
-	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + valueLineBottomModified + ";" + ">";
+    var topValLine = midValLine + bottomValLine - lineBottomModifier;
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + bottomValLine + ";" + ">";
 
-	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + valueLineBottomModified * 2 + ";" + ">";
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + midValLine + ";" + ">";
 
 
-	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + valueLineBottomModified * 3 + ";" + ">";
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + topValLine + ";" + ">";
 
 
 
 	//border lines
 	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";" + "bottom:" + lineBottomModifier + ";" + ">";
 	
-	myHtml += "<hr id='topLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight + ";" + ">";
+	//myHtml += "<hr id='topLine' style=" + "width:" + lineWidth + ";" + "bottom:" + (54) +  ";" + ">";
 	
-	myHtml += "<hr id='verticalLine' style=" + "bottom:" + lineBottomModifier + ";" + "height:" + elementHeight + ";" + ">";
+	myHtml += "<hr id='verticalLine' style=" + "bottom:" + lineBottomModifier + ";" + "height:" + (elementHeight - lineBottomModifier) + ";" + ">";
 
 	//append everything
 	$(element).html(myHtml);
