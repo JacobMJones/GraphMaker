@@ -15,17 +15,32 @@ function drawBarChart(data, options, element) {
 
 	//the bottom of the div holds the names of the variables so the graph begins above the div's bottom
 	var divContainer = $(element);
-
-
-	var barGraphDiv = $('<div id="bar-graph">yo</div>').appendTo(divContainer);
-
-	var graphLabelDiv = $('<div id="graph-labels">yo2</div>').appendTo(divContainer);
-
-
-
-	var lineBottomModifier = 40;
+	//console.log($(element).height());
+    var divContainerHeight = $(element).height();
+	var divContainerWidth = $(element).width();
 	
+	
+	var barGraphDivHeight = divContainerHeight *.9;
+	var barGraphDivWidth = divContainerWidth *.9;
+	var barGraphLeftMargin = divContainerWidth *.1;
+	
+	var graphLabelDivHeight = barGraphDivHeight;
+	var graphLabelDivWidth = divContainerWidth *.1;
 
+	var graphValuesDivHeight = divContainerHeight *.1;
+;
+	var graphValuesDivWidth = divContainerWidth;
+	
+	var barGraphDiv = $("<div id='bar-graph' style=" + "margin-left:" + barGraphLeftMargin + ";" + "height:" + barGraphDivHeight + ";" + "width:" + barGraphDivWidth + ";" + "background-color:" + "coral" + ";" + ">" + "</div>").appendTo(divContainer);
+	
+	var graphLabelDiv = $("<div id='graph-label' style=" + "height:" + graphLabelDivHeight + ";" + "width:" + graphLabelDivWidth + ";" + "background-color:" + "green" + ";" + ">" + "</div>").appendTo(divContainer);
+
+
+
+	var graphValuesDiv = $("<div id='graph-values' style=" + "height:" + graphValuesDivHeight + ";" + "width:" + graphValuesDivWidth + ";" + "background-color:" + "blue" + ";" + ">" + "</div>").appendTo(divContainer);
+	
+	
+	
 	var myHtml = "";
 	var barGraphWidth = $(barGraphDiv).width();
 	var lineWidth = barGraphWidth + barGraphWidth / 10;
@@ -52,7 +67,7 @@ function drawBarChart(data, options, element) {
 	for (var s = 0; s < sections.length; s++) {
 
 		// section and bar
-		myHtml += "<div class='bar' style=" + "height:" + sections[s].sectionHeight + ";" + "background-color:" + sections[s].color + ";" + "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
+		myHtml += "<div class='bar' style=" + "height:" + sections[s].sectionHeight + ";" + "background-color:" + sections[s].color + ";" + "bottom:" + "0" + ";"+ "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
 
 		//Name
 		myHtml += "<div class='barName' style=" + "height:" + 50 + ";" + "margin-left:" + sections[s].distance + ";" + ">" + sections[s].variableName + "</div>";
@@ -63,12 +78,12 @@ function drawBarChart(data, options, element) {
 	}
 
 	//value lines 
-	var midValLine = ((barGraphHeight - lineBottomModifier) / 2) + lineBottomModifier;
+	var midValLine = barGraphHeight;
 
-	var bottomValLine = ((barGraphHeight - lineBottomModifier) / 4) + lineBottomModifier;
+	var bottomValLine = barGraphHeight;
 
-
-	var topValLine = midValLine + bottomValLine - lineBottomModifier;
+	var topValLine = barGraphHeight;
+	
 	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + bottomValLine + ";" + ">";
 
 	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "margin-left:" + "bottom:" + midValLine + ";" + ">";
@@ -79,11 +94,11 @@ function drawBarChart(data, options, element) {
 
 
 	//border lines
-	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";" + "bottom:" + lineBottomModifier + ";" + ">";
+	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";"  + ">";
 
 	myHtml += "<hr id='topLine' style=" + "width:" + lineWidth + ";" + "bottom:" + (topValLine + (midValLine - bottomValLine)) + ";" + ">";
 
-	myHtml += "<hr id='verticalLine' style=" + "bottom:" + lineBottomModifier + ";" + "height:" + (barGraphHeight - lineBottomModifier) + ";" + ">";
+	myHtml += "<hr id='verticalLine' style=" + "height:" + barGraphHeight+ ";" + ">";
 
 	//append everything
 	$(barGraphDiv).html(myHtml);
