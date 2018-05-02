@@ -11,6 +11,10 @@ var sections = [];
 
 function drawBarChart(data, options, element) {
 
+	//the bottom of the div holds the names of the variables so the graph begins above the div's bottom
+	var lineBottomModifier = 40;
+	
+	
 	var myHtml = "";
 	var elementWidth = $(element).width();
 	var lineWidth = elementWidth + elementWidth / 10;
@@ -51,21 +55,25 @@ function drawBarChart(data, options, element) {
 
 	//value lines 
 
-	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight / 4 + ";" + ">";
+	var valueLineBottomModified = (elementHeight/5) + lineBottomModifier;
+	
+	console.log("1st " + valueLineBottomModified  + "2nd " + valueLineBottomModified * 2 + "3rd " + valueLineBottomModified * 3);
+	
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + valueLineBottomModified + ";" + ">";
 
-	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight / 4 * 2 + ";" + ">";
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + valueLineBottomModified * 2 + ";" + ">";
 
 
-	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight / 4 * 3 + ";" + ">";
+	myHtml += "<hr class='valueLine' style=" + "width:" + lineWidth + ";" + "bottom:" + valueLineBottomModified * 3 + ";" + ">";
 
 
 
 	//border lines
-	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";" + ">";
+	myHtml += "<hr id='bottomLine' style=" + "width:" + lineWidth + ";" + "bottom:" + lineBottomModifier + ";" + ">";
 	
 	myHtml += "<hr id='topLine' style=" + "width:" + lineWidth + ";" + "bottom:" + elementHeight + ";" + ">";
 	
-	myHtml += "<hr id='verticalLine' style=" + "height:" + elementHeight + ";" + ">";
+	myHtml += "<hr id='verticalLine' style=" + "bottom:" + lineBottomModifier + ";" + "height:" + elementHeight + ";" + ">";
 
 	//append everything
 	$(element).html(myHtml);

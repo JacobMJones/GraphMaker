@@ -14,3 +14,12 @@ https://learn.jquery.com/performance/append-outside-loop/
 
 Stack Divs Horizontally
 http://jsfiddle.net/watson/Gsj27/3/
+
+Align Divs
+https://css-tricks.com/snippets/css/cross-browser-inline-block/
+https://stackoverflow.com/questions/585945/how-to-align-content-of-a-div-to-the-bottom
+
+
+Lines
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_hr_test
+https://stackoverflow.com/questions/3148415/how-to-make-a-vertical-line-in-html

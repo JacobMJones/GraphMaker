@@ -33,7 +33,7 @@
 
 #bottomLine{
 	position: absolute;
-	bottom: 40;
+
 	
 }
 
@@ -47,7 +47,7 @@
     
     float: left; 
     border: 1px inset;	
-	bottom: 40;
+	
 
 }
 
