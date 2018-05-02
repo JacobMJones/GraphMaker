@@ -1,19 +1,29 @@
-#bar-graph{
+
+#graph{
   position: relative;
-  width:600px;
-  height:600px;
-  
-  padding:30;
+  width:700px;
+  height:700px;
+  padding: 10;
+
 }
 
+#bar-graph{
+  position: absolute;
+  width:600px;
+  height:600px;
+  margin-left: 50;
+}
+
+#graph-labels{
+	position: absolute;
+}
 .bar{
 	position: absolute;
 	width:75;
 	display: inline-block;
 	float: left;
-	bottom: 50;
-	
-	
+	bottom: 50;	
+
 }
 
 .barName{
@@ -45,10 +55,9 @@
 
 #verticalLine{
 	position:absolute;
-	width: 0px; 
+
     
-    float: left; 
-    border: 1px inset;	
+    
 	
 
 }
