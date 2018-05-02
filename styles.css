@@ -20,16 +20,12 @@
 	width:75;
 	display: inline-block;
 	float: left;
-	
-
 }
 
 .barName{
 	position: absolute;
-	width:50;
-	display: inline-block;
 	bottom: 0;
-	text-align: right;
+	
 }
 
 .barValue{
@@ -41,8 +37,6 @@
 
 #bottomLine{
 	position: absolute;
-
-	
 }
 #topLine{
     position: absolute;
