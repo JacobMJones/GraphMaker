@@ -1,8 +1,8 @@
 
 #graph{
   position: relative;
-  width:900px;
-  height:900px;
+  width:700px;
+  height:700px;
 
 }
 
@@ -21,6 +21,8 @@
 
 .barName{
 	position: absolute;
+	display: inline-block;		
+	text-align: center;
 	
 }
 
