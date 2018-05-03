@@ -1,7 +1,6 @@
 var barArray = [];
 var sections = [];
 
-
 var divContainer;
 var divContainerHeight;
 var divContainerWidth;
@@ -152,8 +151,6 @@ function outerValues(data, options, element) {
 	$(graphValuesDiv).append(valuesHtml);
 }
 
-
-
 function randomColor() {
 	var c = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 	return c;
@@ -163,14 +160,6 @@ function drawGraph() {
 	drawBarChart(barArray, "none", "bar-graph");
 }
 
-function addBar() {
-
-	var variableName = document.getElementById("variable-name").value;
-	var variableValue = document.getElementById("variable-value").value;
-	bar.name = variableName;
-	bar.value = parseInt(variableValue);
-	barArray.push(bar);
-}
 
 $(document).ready(function () {
 	var bar1 = {
