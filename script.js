@@ -1,39 +1,29 @@
-var bar = {
-	name: "",
-	value: "",
-}
+
 
 var barArray = [];
-var bar1;
-var bar2;
-
 var sections = [];
 
 
-    var divContainer;
-	var divContainerHeight;
-	var divContainerWidth;
-	var barGraphDivHeight;
-	var barGraphDivWidth;
-	var barGraphLeftMargin;
-	var graphLabelDivHeight;
-	var graphLabelDivWidth;
-	var graphValuesDivHeight;
-	var graphValuesDivWidth;
-	var barGraphDiv;
-	var graphLabelDiv;
-	var graphValuesDiv;
-
-
-
-
+var divContainer;
+var divContainerHeight;
+var divContainerWidth;
+var barGraphDivHeight;
+var barGraphDivWidth;
+var barGraphLeftMargin;
+var graphLabelDivHeight;
+var graphLabelDivWidth;
+var graphValuesDivHeight;
+var graphValuesDivWidth;
+var barGraphDiv;
+var graphLabelDiv;
+var graphValuesDiv;
 
 
 function drawBarChart(data, options, element) {
 
 	createDivs(data, options, element);
-	graph(data,options,element);
-	
+	graph(data, options, element);
+    labels(data,options,element);
 	/*
 	//create three divs (graph, values, labels)
 	
@@ -150,9 +140,8 @@ function drawBarChart(data, options, element) {
 */
 }
 
+function createDivs(data, options, element) {
 
-function createDivs(data,options,element) {
-	
 	divContainer = $(element);
 	divContainerHeight = $(element).height();
 	divContainerWidth = $(element).width();
@@ -163,7 +152,7 @@ function createDivs(data,options,element) {
 	barGraphLeftMargin = divContainerWidth * .1;
 
 	graphLabelDivHeight = barGraphDivHeight;
-	graphLabelDivWidth = divContainerWidth * .1;
+	graphLabelDivWidth = divContainerWidth * .9;
 
 	graphValuesDivHeight = divContainerHeight * .1;
 	graphValuesDivWidth = divContainerWidth;
@@ -177,9 +166,8 @@ function createDivs(data,options,element) {
 
 function graph(data, options, element) {
 
-	
 	var graphHtml = "";
-    var barGraphWidth = $(barGraphDiv).width();
+	var barGraphWidth = $(barGraphDiv).width();
 	var lineWidth = barGraphWidth + barGraphWidth / 10;
 	var barGraphHeight = $(barGraphDiv).height();
 
@@ -190,6 +178,8 @@ function graph(data, options, element) {
 	}
 	var highestValue = Math.max(...valuesArray);
 	var barHeightModifier = (barGraphDivHeight * .9) / highestValue;
+
+	//prepares section object which will be used in html string
 	for (var i = 0; i < data.length; i++) {
 
 		section = {
@@ -205,15 +195,28 @@ function graph(data, options, element) {
 		sections.push(section);
 	}
 
+	//creates html string
 	for (var s = 0; s < sections.length; s++) {
 
 		// section and bar
 		graphHtml += "<div class='bar' style=" + "height:" + sections[s].barHeight + ";" + "background-color:" + sections[s].color + ";" + "bottom:" + ((divContainerHeight * .02)) + ";" + "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
 	}
+
+	$(barGraphDiv).append(graphHtml);
+
+
+}
+
+function labels(data, options, element) {
+	var labelsHtml = "";
+	var labelDist = graphLabelDivWidth / sections.length;
 	
-		$(barGraphDiv).append(graphHtml);
+	for (var s = 0; s < sections.length; s++) {
 		
-		
+	labelsHtml += "<div class='barName' style=" + "bottom:" + ((divContainerHeight * .1) / 1.3) + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableName + "</div>";
+	}
+	
+	$(graphLabelDiv).append(labelsHtml);
 }
 
 function randomColor() {
