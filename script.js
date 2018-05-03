@@ -151,7 +151,7 @@ function createDivs(data, options, element) {
 	barGraphDivWidth = divContainerWidth * .9;
 	barGraphLeftMargin = divContainerWidth * .1;
 
-	graphLabelDivHeight = barGraphDivHeight;
+	graphLabelDivHeight = barGraphDivHeight * .1;
 	graphLabelDivWidth = divContainerWidth * .9;
 
 	graphValuesDivHeight = divContainerHeight * .1;
@@ -208,12 +208,13 @@ function graph(data, options, element) {
 }
 
 function labels(data, options, element) {
+	
 	var labelsHtml = "";
 	var labelDist = graphLabelDivWidth / sections.length;
 	
 	for (var s = 0; s < sections.length; s++) {
 		
-	labelsHtml += "<div class='barName' style=" + "bottom:" + ((divContainerHeight * .1) / 1.3) + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableName + "</div>";
+	labelsHtml += "<div class='barName' style=" + "bottom:" + graphLabelDivHeight + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableName + "</div>";
 	}
 	
 	$(graphLabelDiv).append(labelsHtml);
