@@ -3,33 +3,28 @@
   position: relative;
   width:700px;
   height:700px;
-  padding: 10;
 
 }
 
 #bar-graph{
-  position: absolute;
-  
+  position: absolute; 
 }
 
 #graph-labels{
 	position: absolute;
 }
 .bar{
-	position: absolute;
-	width:75;
+	position: absolute;	
 	display: inline-block;
 	float: left;
 }
 
 .barName{
 	position: absolute;
-	bottom: 0;
 	
 }
 
-.barValue{
-	
+.barValue{	
 	position: absolute;
 	display: inline-block;		
 	text-align: center;
@@ -47,10 +42,5 @@
 
 #verticalLine{
 	position:absolute;
-
-    
-    
-	
-
 }
 
