@@ -19,7 +19,7 @@ If an attribute is not present a default style is used. The options are 'colors'
   #### colors: 
 is an array of colors in hex format. They must be seperated by commas with no spaces in the string. For instance,
  
- ```colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#aaa229,```
+ ```colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#aaa229"```
  is used in the above picture. If the options object doesn't contain a 'colors' attribute the bars will be randomly colored.
   
   #### showMidLine: 
