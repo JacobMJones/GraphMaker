@@ -35,7 +35,7 @@ is a reference to a div formatted for jQuery. The graph will use the dimensions 
 
 jQuery
 
-### Examples
+### Example
 
 ```
 var barArray = [];
