@@ -74,6 +74,18 @@ $(document).ready(function() {
 
 ```
 
+## Bugs/Issues
+
+If the div containing the graph is too small the graph becomes too cluttered to read. 
+
+## Roadmap
+
+There are no plans to update this library at the present time. 
+
+## External Resources
+
+Please refer to the 'Resources Used" text file in this repository.
+
 ## Authors
 
 * **Jacob Jones** 
