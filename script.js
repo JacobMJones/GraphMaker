@@ -1,9 +1,7 @@
+var barArray = []
 
-function drawGraph() {
-	drawBarChart(barArray, "none", "bar-graph");
-}
 
-$(document).ready(function () {
+function createBars(){
 	var bar1 = {
 		name: 'cats',
 		value: 50
@@ -35,4 +33,7 @@ $(document).ready(function () {
 	barArray.push(bar5);
 
 	drawBarChart(barArray, '', "#graph");
+}
+$(document).ready(function () {
+	createBars();
 });
