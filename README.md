@@ -2,7 +2,7 @@
 
 This is a bar graph library that creates simple bar graphs. 
 
-![](https://ibb.co/gCFCw7.png)
+![graph](https://ibb.co/gCFCw7.png)
 ## Getting Started
 
 All the magic happens in a single function, drawBarGraph(data,options,element).
