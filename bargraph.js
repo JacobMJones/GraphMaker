@@ -87,7 +87,7 @@ function graph(data, options) {
 	for (var s = 0; s < sections.length; s++) {
 
 		// section and bar
-		graphHtml += "<div class='bar' style=" + "height:" + sections[s].barHeight + ";" + "background-color:" + sections[s].color + ";" + "bottom:" + ((divContainerHeight * .02)) + ";" + "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
+		graphHtml += "<div class='bar' style=" + "height:" + sections[s].barHeight + ";" + "background-color:" + sections[s].color + ";" + "bottom:" + ((divContainerHeight * .02)) + ";" + "float:" + "left" + ";" + "display:" + "inline-block" + ";" +  "position:" + "absolute" + ";" + "width:" + sections[s].sectionWidth + ";" + "margin-left:" + sections[s].distance + ";" + "text-align:" + "center" + ";" + "></div>";
 	}
 
 	$(barGraphDiv).append(graphHtml);

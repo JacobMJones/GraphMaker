@@ -13,11 +13,7 @@
 #graph-labels{
 	position: absolute;
 }
-.bar{
-	position: absolute;	
-	display: inline-block;
-	float: left;
-}
+
 
 .barName{
 	position: absolute;
