@@ -21,7 +21,7 @@ function drawBarChart(data, options, element) {
 	createDivs(element);
 	graph(data, options);
 	labels(data, options);
-	lines();
+	lines(options);
 	innerValues(data, options, element);
 	outerValues(data, options, element);
 }
@@ -32,14 +32,14 @@ function createDivs(element) {
 	divContainerHeight = $(element).height();
 	divContainerWidth = $(element).width();
 
-	barGraphDivHeight = divContainerHeight * .9;
-	barGraphDivWidth = divContainerWidth * .9;
-	barGraphLeftMargin = divContainerWidth * .1;
+	barGraphDivHeight = divContainerHeight * 0.9;
+	barGraphDivWidth = divContainerWidth * 0.9;
+	barGraphLeftMargin = divContainerWidth * 0.1;
 
-	graphLabelDivHeight = barGraphDivHeight * .1;
-	graphLabelDivWidth = divContainerWidth * .9;
+	graphLabelDivHeight = barGraphDivHeight * 0.1;
+	graphLabelDivWidth = divContainerWidth * 0.9;
 
-	graphValuesDivHeight = divContainerHeight * .1;
+	graphValuesDivHeight = divContainerHeight * 0.1;
 	graphValuesDivWidth = divContainerWidth;
 
 	barGraphDiv = $("<div id='bar-graph' style=" + "margin-left:" + barGraphLeftMargin + ";" + "height:" + barGraphDivHeight + ";" + "width:" + barGraphDivWidth + ";" + ">" + "</div>").appendTo(divContainer);
@@ -62,10 +62,9 @@ function graph(data, options) {
 		valuesArray.push(data[u].value);
 	}
 	highestValue = Math.max(...valuesArray);
-	var barHeightModifier = (barGraphDivHeight * .9) / highestValue;
+	var barHeightModifier = (barGraphDivHeight * 0.9) / highestValue;
 
 	//prepares section object which will be used in html string
-
 	var amountOfColors = data.length;
 	setColors(options, amountOfColors);
 	for (var i = 0; i < data.length; i++) {
@@ -107,7 +106,7 @@ function labels(data, options, element) {
 	$(graphLabelDiv).append(labelsHtml);
 }
 
-function lines() {
+function lines(options) {
 
 	var lineHtml = "";
 	var midValLine = barGraphDivHeight / 2;
@@ -117,7 +116,9 @@ function lines() {
 	lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "bottom:" + 0 + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
 
 	//middle line
-	lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "bottom:" + midValLine + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
+	if ((options.showMidLine === undefined || options.showMidLine == true)) {
+		lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "bottom:" + midValLine + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
+	}
 
 	//top line
 	lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "top:" + 0 + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
@@ -127,14 +128,14 @@ function lines() {
 
 function innerValues(data, options, element) {
 
-	if(options.insideValues !== undefined && options.insideValues == true){
-		
-	var valuesHtml = "";
-	var labelDist = graphLabelDivWidth / sections.length;
-	for (var s = 0; s < sections.length; s++) {
-		valuesHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].barHeight + 10) + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableValue + "</div>";
-	}
-	$(barGraphDiv).append(valuesHtml);
+	if (options.insideValues !== undefined && options.insideValues == true) {
+
+		var valuesHtml = "";
+		var labelDist = graphLabelDivWidth / sections.length;
+		for (var s = 0; s < sections.length; s++) {
+			valuesHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].barHeight + 10) + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableValue + "</div>";
+		}
+		$(barGraphDiv).append(valuesHtml);
 	}
 }
 
@@ -142,8 +143,11 @@ function outerValues(data, options, element) {
 
 	//Values 
 	var toptopValue = Math.ceil((highestValue * 1.1) / 10) * 10;
-
+	if (options.showMidLine !== undefined && options.showMidLine  == true) {
 	var midValue = toptopValue / 2
+	}else{
+		midValue = '';
+	}
 	var midValPosition = divContainerHeight / 2;
 
 	var valuesHtml = "";
@@ -171,29 +175,27 @@ function setColors(options, amountOfColors) {
 
 		var opt = options.colors;
 		var amount = opt.match(/#/gi).length;
-		
+
 		for (var i = 0; i < amount; i++) {
 			var col = opt.substr(0, opt.indexOf(','));
 			opt = opt.replace(col, '');
 			opt = opt.replace(',', '');
 			colors.push(col);
 		}
-		
-	}
-	else{
-		
-		
-		for(var u = 0; u < amountOfColors; u++){
+
+	} else {
+
+
+		for (var u = 0; u < amountOfColors; u++) {
 			var col = randomColor();
 			colors.push(col);
 		}
 	}
-console.log(colors);
+	console.log(colors);
 }
 
 function randomColor() {
 
 	var c = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 	return c;
-
 }
