@@ -1,6 +1,6 @@
 # GraphMaker
 
-This is a bar graph library that creates simple bar graphs. 
+bargraph.js is a bar graph library that creates simple bar graphs. 
 
 [![bargraph1.png](https://s31.postimg.cc/totaximhn/bargraph1.png)](https://postimg.cc/image/mycto2zbr/)
 ## Getting Started
