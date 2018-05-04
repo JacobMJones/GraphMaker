@@ -1,6 +1,5 @@
-var barArray = []
-
-
+var barArray = [];
+var options;
 function createBars(){
 	var bar1 = {
 		name: 'cats',
@@ -32,13 +31,15 @@ function createBars(){
 	barArray.push(bar4);
 	barArray.push(bar5);
 	
-	var options = {
-		colors: "blue red green yellow black",
+	options = {
+		colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#999999",
 		midline: true
-	}
+	};
 
-	drawBarChart(barArray, options, "#graph");
+	
 }
 $(document).ready(function () {
 	createBars();
+	
+	drawBarChart(barArray, options, "#graph");
 });

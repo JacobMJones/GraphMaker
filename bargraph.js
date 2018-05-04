@@ -1,5 +1,6 @@
 var barArray = [];
 var sections = [];
+var colors = [];
 
 var divContainer;
 var divContainerHeight;
@@ -48,7 +49,7 @@ function createDivs(element) {
 	graphValuesDiv = $("<div id='graph-values' style=" + "text-align:" + "right" + ";" + "height:" + graphValuesDivHeight + ";" + "width:" + graphValuesDivWidth + ";" + ">" + "</div>").appendTo(divContainer);
 }
 
-function graph(data, options, element) {
+function graph(data, options) {
 
 	var graphHtml = "";
 	var barGraphWidth = $(barGraphDiv).width();
@@ -64,6 +65,8 @@ function graph(data, options, element) {
 	var barHeightModifier = (barGraphDivHeight * .9) / highestValue;
 
 	//prepares section object which will be used in html string
+
+	setColors(options);
 	for (var i = 0; i < data.length; i++) {
 
 		section = {
@@ -104,10 +107,10 @@ function labels(data, options, element) {
 }
 
 function lines() {
-	
+
 	var lineHtml = "";
 	var midValLine = barGraphDivHeight / 2;
-	
+
 
 	//bottom line
 	lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "bottom:" + 0 + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
@@ -137,25 +140,54 @@ function outerValues(data, options, element) {
 	var toptopValue = Math.ceil((highestValue * 1.1) / 10) * 10;
 
 	var midValue = toptopValue / 2
-	var midValPosition = divContainerHeight /2;
-	
+	var midValPosition = divContainerHeight / 2;
+
 	var valuesHtml = "";
-	
+
 	valuesHtml += "<p style=" + "position:" + "absolute" + ";" + "top:" + 0 + ";" + ">" + toptopValue + "</p>";
-	
+
 	valuesHtml += "<p style=" + "position:" + "absolute" + ";" + "bottom:" + midValPosition + ";" + ">" + midValue + "</p>";
-	
+
 	valuesHtml += "<p style=" + "position:" + "absolute" + ";" + "bottom:" + (divContainerHeight * .05) + ";" + ">" + 0 + "</p>";
-	
+
 	$(graphValuesDiv).append(valuesHtml);
 }
 
-function randomColor() {
-	
-	
-	var c = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-	return c;
-	
+function count(string) {
+	var count = {};
+	string.split('').forEach(function (s) {
+		count[s] ? count[s]++ : count[s] = 1;
+	});
+	return count;
 }
 
+function setColors(options) {
 
+
+	if (options.colors !== undefined) {
+
+		var colorsExtracted = false;
+		var opt = options.colors;
+		var amount = opt.match(/#/gi).length;
+		
+		for (var i = 0; i < amount; i++) {
+			var col = opt.substr(0, opt.indexOf(','));
+			opt = opt.replace(col, '');
+			opt = opt.replace(',', '');
+			colors.push(col);
+		}
+		colors.push(opt);
+		console.log(colors);
+	
+	}
+
+}
+
+function randomColor() {
+
+
+	var c = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+	return c;
+
+
+}

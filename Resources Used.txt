@@ -23,3 +23,11 @@ https://stackoverflow.com/questions/585945/how-to-align-content-of-a-div-to-the-
 Lines
 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_hr_test
 https://stackoverflow.com/questions/3148415/how-to-make-a-vertical-line-in-html
+
+
+Parse string by comma/space
+https://stackoverflow.com/questions/10398931/javascript-how-to-remove-text-from-a-string
+https://stackoverflow.com/questions/14867835/get-substring-between-two-characters-using-javascript
+
+Count occurences of a char
+https://teamtreehouse.com/community/how-to-count-the-number-of-times-a-specific-character-appears-in-a-string
