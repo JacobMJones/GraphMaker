@@ -63,13 +63,12 @@ barArray.push(bar3);
 options = {
 	colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#aaa229,",
 	showMidLine: true,
-	insideValues: false
+	insideValues: false 
 };
 
 }
-$(document).ready(function () {
+$(document).ready(function() {
 	createBars();
-
 	drawBarChart(barArray, options, "#graph");
 });
 
