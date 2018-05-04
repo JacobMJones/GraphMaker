@@ -5,7 +5,7 @@ This is a bar graph library that creates simple bar graphs.
 [![bargraph1.png](https://s31.postimg.cc/totaximhn/bargraph1.png)](https://postimg.cc/image/mycto2zbr/)
 ## Getting Started
 
-All the magic happens in a single function, drawBarGraph(data,options,element).
+All the magic happens in a single function, **drawBarGraph(data,options,element)**.
 
 ### data 
 is an array of objects. Each object must contain an attribute called 'name' and an attribute called 'value'. 
