@@ -2,7 +2,7 @@
 
 This is a bar graph library that creates simple bar graphs. 
 
-![Settings Window](https://raw.github.com/JacobMJones/GraphMaker/master/barchart1.png)
+[![bargraph1.png](https://s31.postimg.cc/totaximhn/bargraph1.png)](https://postimg.cc/image/mycto2zbr/)
 ## Getting Started
 
 All the magic happens in a single function, drawBarGraph(data,options,element).
