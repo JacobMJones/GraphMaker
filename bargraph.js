@@ -31,7 +31,6 @@ function createDivs(element) {
 	divContainerHeight = $(element).height();
 	divContainerWidth = $(element).width();
 
-
 	barGraphDivHeight = divContainerHeight * .9;
 	barGraphDivWidth = divContainerWidth * .9;
 	barGraphLeftMargin = divContainerWidth * .1;
@@ -56,7 +55,7 @@ function graph(data, options, element) {
 	var lineWidth = barGraphWidth + barGraphWidth / 10;
 	var barGraphHeight = $(barGraphDiv).height();
 
-	//Figures out the highest value and proportions according to graph size
+	//Finds highest value and creates proportions according to graph size
 	var valuesArray = [];
 	for (u = 0; u < data.length; u++) {
 		valuesArray.push(data[u].value);
@@ -152,8 +151,11 @@ function outerValues(data, options, element) {
 }
 
 function randomColor() {
+	
+	
 	var c = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 	return c;
+	
 }
 
 

@@ -31,8 +31,13 @@ function createBars(){
 	barArray.push(bar3);
 	barArray.push(bar4);
 	barArray.push(bar5);
+	
+	var options = {
+		colors: "blue red green yellow black",
+		midline: true
+	}
 
-	drawBarChart(barArray, '', "#graph");
+	drawBarChart(barArray, options, "#graph");
 }
 $(document).ready(function () {
 	createBars();
