@@ -42,7 +42,7 @@ function createDivs(element) {
 	graphValuesDivHeight = divContainerHeight * 0.1;
 	graphValuesDivWidth = divContainerWidth;
 
-	barGraphDiv = $("<div id='bar-graph' style=" + "margin-left:" + barGraphLeftMargin + ";" + "height:" + barGraphDivHeight + ";" + "width:" + barGraphDivWidth + ";" + ">" + "</div>").appendTo(divContainer);
+	barGraphDiv = $("<div id='bar-graph' style=" + "margin-left:" + barGraphLeftMargin + ";" + "position:" + "absolute" + ";" + "height:" + barGraphDivHeight + ";" + "width:" + barGraphDivWidth + ";" + ">" + "</div>").appendTo(divContainer);
 
 	graphLabelDiv = $("<div id='graph-label' style=" + "margin-left:" + barGraphLeftMargin + ";" + "height:" + graphLabelDivHeight + ";" + "width:" + graphLabelDivWidth + ";" + ">" + "</div>").appendTo(divContainer);
 
@@ -100,7 +100,7 @@ function labels(data, options, element) {
 
 	for (var s = 0; s < sections.length; s++) {
 
-		labelsHtml += "<div class='barName' style=" + "bottom:" + graphLabelDivHeight + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableName + "</div>";
+		labelsHtml += "<div class='barName' style=" + "text-align:" + "center" + ";" + "display:" + "inline-block" + ";" +   "position:" + "absolute" + ";" + "bottom:" + graphLabelDivHeight + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableName + "</div>";
 	}
 
 	$(graphLabelDiv).append(labelsHtml);
@@ -111,17 +111,16 @@ function lines(options) {
 	var lineHtml = "";
 	var midValLine = barGraphDivHeight / 2;
 
-
 	//bottom line
-	lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "bottom:" + 0 + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
+	lineHtml += "<hr class='valueLine' style=" + "position:" + "absolute" + ";" + "background:" + "grey" + ";" + "bottom:" + 0 + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
 
 	//middle line
 	if ((options.showMidLine === undefined || options.showMidLine == true)) {
-		lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "bottom:" + midValLine + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
+		lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "position:" + "absolute" + ";" + "bottom:" + midValLine + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
 	}
 
 	//top line
-	lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "top:" + 0 + ";" + "size:" + "1px" + ";" + "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
+	lineHtml += "<hr class='valueLine' style=" + "background:" + "grey" + ";" + "top:" + 0 + ";" + "size:" + "1px" + ";" + "position:" + "absolute" + ";" +  "height:" + "1" + ";" + "margin-left:" + "-15" + ";" + "width:" + (barGraphDivWidth + 15) + ";" + ">";
 
 	$(barGraphDiv).append(lineHtml);
 }
@@ -132,7 +131,7 @@ function innerValues(data, options, element) {
 		var valuesHtml = "";
 		var labelDist = graphLabelDivWidth / sections.length;
 		for (var s = 0; s < sections.length; s++) {
-			valuesHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].barHeight + 10) + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableValue + "</div>";
+			valuesHtml += "<div class='barValue' style=" +  "position:" + "absolute" + ";" + "display:" + "inline-block" + ";" + "text-align:" + "center" + ";" + "bottom:" + (sections[s].barHeight + 10) + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableValue + "</div>";
 		}
 		$(barGraphDiv).append(valuesHtml);
 	}

@@ -15,31 +15,7 @@
 }
 
 
-.barName{
-	position: absolute;
-	display: inline-block;		
-	text-align: center;
-	
-}
 
-.barValue{	
-	position: absolute;
-	display: inline-block;		
-	text-align: center;
-}
 
-#bottomLine{
-	position: absolute;
-}
-#topLine{
-    position: absolute;
-}
-.valueLine{
-	position: absolute;
-	
-}
 
-#verticalLine{
-	position:absolute;
-}
 
