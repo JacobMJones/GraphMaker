@@ -28,12 +28,12 @@ is a boolean. If it is true, the line and value at the middle of the graph is sh
   #### insideValues: 
 is a boolean. If it is true, the values will be shown inside the graph, Set to false, they will not. 
 
+### element: 
+is a reference to a div formatted for jQuery. The graph will use the dimensions of the 'element' to scale the graph. 
 
 ### Prerequisites
 
-JQuery
-
-
+jQuery
 
 ### Examples
 
@@ -77,9 +77,7 @@ $(document).ready(function () {
 
 ## Authors
 
-* **Jacob Jones** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Jacob Jones** 
 
 ## License
 
