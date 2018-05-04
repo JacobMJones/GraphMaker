@@ -73,7 +73,7 @@ function graph(data, options) {
 			divName: "barDiv" + i,
 			variableName: data[i].name,
 			variableValue: data[i].value,
-			sectionHeight: data[i].value + (barGraphHeight / 4),
+			sectionHeight: data[i].value + (barGraphHeight / 2),
 			color: colors[i],
 			barHeight: data[i].value * barHeightModifier,
 			sectionWidth: (90 / data.length) - (5 / data.length) + "%",
@@ -129,7 +129,6 @@ function lines(options) {
 function innerValues(data, options, element) {
 
 	if (options.insideValues !== undefined && options.insideValues == true) {
-
 		var valuesHtml = "";
 		var labelDist = graphLabelDivWidth / sections.length;
 		for (var s = 0; s < sections.length; s++) {

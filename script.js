@@ -33,7 +33,7 @@ function createBars(){
 	
 	options = {
 		colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#aaa229,",
-		showMidLine: false,
+		showMidLine: true,
 		insideValues: false
 	};
 
