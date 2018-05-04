@@ -127,12 +127,15 @@ function lines() {
 
 function innerValues(data, options, element) {
 
+	if(options.insideValues !== undefined && options.insideValues == true){
+		
 	var valuesHtml = "";
 	var labelDist = graphLabelDivWidth / sections.length;
 	for (var s = 0; s < sections.length; s++) {
 		valuesHtml += "<div class='barValue' style=" + "bottom:" + (sections[s].barHeight + 10) + ";" + "margin-left:" + ((labelDist * s) + (labelDist / data.length)) + ";" + ">" + sections[s].variableValue + "</div>";
 	}
 	$(barGraphDiv).append(valuesHtml);
+	}
 }
 
 function outerValues(data, options, element) {
@@ -190,9 +193,7 @@ console.log(colors);
 
 function randomColor() {
 
-
 	var c = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 	return c;
-
 
 }
