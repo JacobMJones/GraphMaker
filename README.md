@@ -2,7 +2,7 @@
 
 This is a bar graph library that creates simple bar graphs. 
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+https://imgur.com/a/2jjurwT.png
 ## Getting Started
 
 All the magic happens in a single function, drawBarGraph(data,options,element).
