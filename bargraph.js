@@ -66,7 +66,8 @@ function graph(data, options) {
 
 	//prepares section object which will be used in html string
 
-	setColors(options);
+	var amountOfColors = data.length;
+	setColors(options, amountOfColors);
 	for (var i = 0; i < data.length; i++) {
 
 		section = {
@@ -161,7 +162,7 @@ function count(string) {
 	return count;
 }
 
-function setColors(options) {
+function setColors(options, amountOfColors) {
 
 	if (options.colors !== undefined) {
 
@@ -174,16 +175,17 @@ function setColors(options) {
 			opt = opt.replace(',', '');
 			colors.push(col);
 		}
-	    colors.push(opt);
-		console.log(colors);
+		
 	}
 	else{
 		
-		for(var u = 0; sections.length; u++){
-			colors.push(randomColor);
+		
+		for(var u = 0; u < amountOfColors; u++){
+			var col = randomColor();
+			colors.push(col);
 		}
 	}
-
+console.log(colors);
 }
 
 function randomColor() {
