@@ -14,7 +14,7 @@ of the 'name' attribute.
 
 ### options: 
 is an object. If you include any of the following options they will be included in the styling of the graph. 
-If an attribute is not present a default style is used. 
+If an attribute is not present a default style is used. The options are 'colors', 'showMidLine', and 'insideValues'.
 
   #### colors: 
 is an array of colors in hex format. They must be seperated by commas with no spaces in the string. For instance,
