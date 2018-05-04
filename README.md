@@ -16,16 +16,16 @@ of the 'name' attribute.
 is an object. If you include any of the following options they will be included in the styling of the graph. 
 If an attribute is not present a default style is used. 
 
-#### colors: 
+  #### colors: 
 is an array of colors in hex format. They must be seperated by commas with no spaces in the string. For instance,
  
  ```colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#aaa229,``` is used in the above picture. If the options object doesn't contain a 'colors' 
   attribute the bars will be randomly colored.
   
-#### showMidLine: 
+  #### showMidLine: 
 is a boolean. If it is true, the line and value at the middle of the graph is shown. Set to false, they are not. 
 		
-#### insideValues: 
+  #### insideValues: 
 is a boolean. If it is true, the values will be shown inside the graph, Set to false, they will not. 
 
 
