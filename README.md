@@ -19,8 +19,8 @@ If an attribute is not present a default style is used.
   #### colors: 
 is an array of colors in hex format. They must be seperated by commas with no spaces in the string. For instance,
  
- ```colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#aaa229,``` is used in the above picture. If the options object doesn't contain a 'colors' 
-  attribute the bars will be randomly colored.
+ ```colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#aaa229,```
+ is used in the above picture. If the options object doesn't contain a 'colors' attribute the bars will be randomly colored.
   
   #### showMidLine: 
 is a boolean. If it is true, the line and value at the middle of the graph is shown. Set to false, they are not. 
