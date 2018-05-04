@@ -74,7 +74,7 @@ function graph(data, options) {
 			variableName: data[i].name,
 			variableValue: data[i].value,
 			sectionHeight: data[i].value + (barGraphHeight / 4),
-			color: randomColor(),
+			color: colors[i],
 			barHeight: data[i].value * barHeightModifier,
 			sectionWidth: (90 / data.length) - (5 / data.length) + "%",
 			distance: (100 / data.length) * i + "%",
@@ -163,10 +163,8 @@ function count(string) {
 
 function setColors(options) {
 
-
 	if (options.colors !== undefined) {
 
-		var colorsExtracted = false;
 		var opt = options.colors;
 		var amount = opt.match(/#/gi).length;
 		
@@ -176,9 +174,14 @@ function setColors(options) {
 			opt = opt.replace(',', '');
 			colors.push(col);
 		}
-		colors.push(opt);
+	    colors.push(opt);
 		console.log(colors);
-	
+	}
+	else{
+		
+		for(var u = 0; sections.length; u++){
+			colors.push(randomColor);
+		}
 	}
 
 }

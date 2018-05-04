@@ -32,7 +32,7 @@ function createBars(){
 	barArray.push(bar5);
 	
 	options = {
-		colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#999999",
+		colors: "#0000FF,#FF0000,#00FF00,#FFFF00,#aaa229,",
 		midline: true
 	};
 
